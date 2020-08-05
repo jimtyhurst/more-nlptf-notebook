@@ -7,16 +7,15 @@
 #
 # I added a few more libraries in this Dockerfile that I need
 # for some natural language processing (NLP) applications.
-FROM jupyter/tensorflow-notebook:3b1f4f5e6cc1
+FROM jupyter/tensorflow-notebook:1a66dd36ff82
 
 LABEL maintainer="Jim Tyhurst <jim@tyhurst.com>"
 
 RUN pip install \
-    'plotnine==0.6.0' \
-    'keras==2.3.1' \
+    'plotnine==0.7.1' \
     'nltk==3.5' \
     'gensim==3.8.3' \
-    'spacy==2.3.0' \
+    'spacy==2.3.2' \
     'mxnet==1.6.0' \
     'gluonnlp==0.9.1' \
     && \
