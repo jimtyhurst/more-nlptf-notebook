@@ -8,22 +8,22 @@ This [Docker image](./Dockerfile) installs a few more Python libraries for natur
 ## To Build:
 From a shell in the directory that contains the `Dockerfile`:
 ```{bash}
-docker build --rm -t more-nlp-notebook .
+docker build --rm -t more-nlptf-notebook .
 ```
 
-That command creates a [Docker](https://www.docker.com/) image named `more-nlp-notebook`, using the `Dockerfile` in the current working directory (thus, the `.` at the end of the command).
+That command creates a [Docker](https://www.docker.com/) image named `more-nlptf-notebook`, using the `Dockerfile` in the current working directory (thus, the `.` at the end of the command).
 
 ## To Run:
 ```{bash}
 docker run -it --rm \
-  --name more-tensorflow \
+  --name more-nlptf \
   -p 8888:8888 \
-  -v "$PWD":/home/jovyan/work more-nlp-notebook
+  -v "$PWD":/home/jovyan/work more-nlptf-notebook
 ```
 
 * Runs interactively (`-it`), logging to the shell window.
 * The `--rm` option causes the container to be deleted when the container is stopped.
-* The container is named, `more-nlp`.
+* The container is named, `more-nlptf`.
 * The Jupyter server will be available at `localhost:8888` on your computer.
 * Mapping `$PWD` to the container's `work` directory, enables files and directories in the current working directory (where you execute the `docker run` command) to appear in the `work` folder in the Jupyter server.
 * When the container starts up, it will display a URL where you can connect to the Jupyter server. The URL will contain a security token, such as:  
